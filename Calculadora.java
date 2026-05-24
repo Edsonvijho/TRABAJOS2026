@@ -1,10 +1,55 @@
+import java.util.Scanner;
+
 public class Calculadora {
     public static void main(String[] args) {
-        int a = 20;
-        int b = 5;
-        System.out.println("Suma: " + (a + b));
-        System.out.println("Resta: " + (a - b));
-        System.out.println("Multiplicación: " + (a * b));
-        System.out.println("División: " + (a / b));
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("1. Sumar");
+        System.out.println("2. Restar");
+        System.out.println("3. Multiplicar");
+        System.out.println("4. Dividir");
+        System.out.println("5. Potencia");
+
+        System.out.print("Seleccione operación: ");
+        int opcion = sc.nextInt();
+
+        System.out.print("Ingrese primer número: ");
+        double a = sc.nextDouble();
+
+        System.out.print("Ingrese segundo número: ");
+        double b = sc.nextDouble();
+
+        switch(opcion) {
+
+            case 1:
+                System.out.println("Resultado: " + (a + b));
+                break;
+
+            case 2:
+                System.out.println("Resultado: " + (a - b));
+                break;
+
+            case 3:
+                System.out.println("Resultado: " + (a * b));
+                break;
+
+            case 4:
+                if(b == 0) {
+                    System.out.println("Error: división por cero");
+                } else {
+                    System.out.println("Resultado: " + (a / b));
+                }
+                break;
+
+            case 5:
+                System.out.println("Resultado: " + Math.pow(a, b));
+                break;
+
+            default:
+                System.out.println("Entrada inválida");
+        }
+
+        sc.close();
     }
 }
